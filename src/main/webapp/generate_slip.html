@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Salary Slip</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* Light pastel gradient background */
+            background: linear-gradient(135deg, #d4f8d4, #d4e9f8, #f0f0f0);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            background-color: #ffffff; /* Clean white card */
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #007BFF; /* Blue heading */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        input[type="submit"], .back-link {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover, .back-link:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f8ff; /* Light blue result box */
+            color: #000;
+            border-radius: 5px;
+            display: none;
+            word-wrap: break-word;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        function generateSlip(event) {
+            event.preventDefault();
+            const empId = document.getElementById('employeeId').value;
+
+            if (!empId) {
+                alert('Please enter Employee ID');
+                return;
+            }
+
+            fetch('GenerateSlipServlet', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'empId=' + encodeURIComponent(empId)
+            })
+            .then(response => response.text())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = data;
+            })
+            .catch(err => alert('Error: ' + err));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Salary Slip</h2>
+        <form onsubmit="generateSlip(event)">
+            <input type="text" id="employeeId" name="empId" placeholder="Enter Employee ID" required>
+            <input type="submit" value="Generate Slip">
+        </form>
+
+        <div id="result"></div>
+    </div>
+</body>
+</html>

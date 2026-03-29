@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+   version="6.0">
+  <display-name>PayrollSystem</display-name>
+
+    <!-- Servlet -->
+        <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Home Servlet -->
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/HomeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Add Employee Servlet -->
+    <servlet>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.AddEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <url-pattern>/AddEmployeeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Search Employee Servlet -->
+    <servlet>
+        <servlet-name>SearchEmployeeServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.SearchEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchEmployeeServlet</servlet-name>
+        <url-pattern>/SearchEmployeeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Allowance Servlet -->
+    <servlet>
+        <servlet-name>AllowanceServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.AllowanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllowanceServlet</servlet-name>
+        <url-pattern>/AllowanceServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Deduction Servlet -->
+    <servlet>
+        <servlet-name>DeductionServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.DeductionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeductionServlet</servlet-name>
+        <url-pattern>/DeductionServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Update Salary Servlet -->
+    <servlet>
+        <servlet-name>UpdateSalaryServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.UpdateSalaryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateSalaryServlet</servlet-name>
+        <url-pattern>/UpdateSalaryServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Generate Salary Slip Servlet -->
+    <servlet>
+        <servlet-name>GenerateSlipServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.GenerateSlipServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateSlipServlet</servlet-name>
+        <url-pattern>/GenerateSlipServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Employee Servlet -->
+    <servlet>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.DeleteEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <url-pattern>/DeleteEmployeeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- View All Employees Servlet -->
+    <servlet>
+        <servlet-name>ViewAllEmployeesServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.ViewAllEmployeesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewAllEmployeesServlet</servlet-name>
+        <url-pattern>/ViewAllEmployeesServlet</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.employee.payrollsystem.servlet.RegisterServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+</servlet-mapping>
+
+    <!-- Logout Servlet -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.employee.payrollsystem.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome file -->
+    <welcome-file-list>
+        <welcome-file>login.html</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

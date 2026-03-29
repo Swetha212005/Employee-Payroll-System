@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Deduction</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #f8f8f8 50%, #d4edda 50%);
+            color: #000;
+        }
+
+        .container {
+            width: 420px;
+            margin: 60px auto;
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: #fff;
+            color: #000;
+        }
+
+        input[type="submit"], .home-btn {
+            width: 48%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffcc00;
+        }
+
+        .home-btn {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .home-btn:hover {
+            background-color: #45a049;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+    <script>
+        function showDeductionAlert(event) {
+            const amount = document.getElementById("amount").value;
+            if (amount && amount > 0) {
+                alert("Deduction recorded successfully!");
+            } else {
+                alert("Please enter a valid deduction amount.");
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Deduction Form</h2>
+        <form id="deductionForm" action="DeductionServlet" method="post" onsubmit="showDeductionAlert(event)">
+            <label>Employee ID:</label>
+            <input type="text" name="empId" required>
+
+            <label>Employee Name:</label>
+            <input type="text" name="empName" required>
+
+            <label>Department:</label>
+            <input type="text" name="department" required>
+
+            <label>Reason for Deduction:</label>
+            <input type="text" name="reason" required>
+
+            <label>Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <div class="buttons">
+                <input type="submit" value="Save Deduction">
+                <a href="home.html" class="home-btn">Home</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

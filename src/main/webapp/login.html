@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Payroll Management System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: flex-end; /* ✅ move card to right */
+            align-items: center;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('icons/login.png')
+                no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+            margin-right: 8%; /* ✅ position card slightly away from right edge */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px 12px 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 18px;
+        }
+
+        input[type="submit"], .register-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(90deg, #ff8a00, #e52e71);
+            color: #fff;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #e52e71, #ff8a00);
+        }
+
+        .register-btn {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .icon-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-button i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><i class="fas fa-user-circle"></i> Employee Payroll Login</h2>
+
+        <form action="LoginServlet" method="post">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Enter Username" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+
+        <form action="register.html" method="get">
+            <button type="submit" class="register-btn icon-button">
+                <i class="fas fa-user-plus"></i> New User? Register
+            </button>
+        </form>
+    </div>
+</body>
+</html>

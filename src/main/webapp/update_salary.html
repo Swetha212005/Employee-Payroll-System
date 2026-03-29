@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update/Increment Salary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            width: 380px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+        input[type="submit"], .home-btn {
+            width: 90%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #f39c12;
+            color: white;
+        }
+        input[type="submit"]:hover {
+            background-color: #e67e22;
+        }
+        .home-btn {
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .home-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Update/Increment Salary</h2>
+        <form action="UpdateSalaryServlet" method="post">
+            <input type="text" name="empId" placeholder="Employee ID" required><br>
+            <input type="number" name="increment" placeholder="Increment Amount" step="0.01" required><br>
+            <input type="submit" value="Update Salary">
+        </form>
+        <br>
+        <a href="home.html" class="home-btn">Back to Home</a>
+    </div>
+</body>
+</html>

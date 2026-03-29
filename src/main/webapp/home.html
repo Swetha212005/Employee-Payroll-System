@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll System - Home</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #f0f4f8, #d9e2ec); 
+            color: #000; 
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 40px;
+            color: #0056b3; 
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 1000px;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            width: 180px;
+            height: 160px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 12px;
+        }
+
+        .card:hover {
+            background-color: #ffd700;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<h2>Welcome to Payroll Management System</h2>
+
+<div class="grid">
+    <a class="card" href="add_employee.html">
+        <img src="icons/add.png" alt="Add Employee">
+        Add Employee
+    </a>
+    <a class="card" href="search_employee.html">
+        <img src="icons/search.png" alt="Search Employee">
+        Search Employee
+    </a>
+    <a class="card" href="allowance.html">
+        <img src="icons/allowance.png" alt="Allowance">
+        Employee Allowance
+    </a>
+    <a class="card" href="deduction.html">
+        <img src="icons/deduction.png" alt="Deduction">
+        Employee Deduction
+    </a>
+    <a class="card" href="update_salary.html">
+        <img src="icons/update.png" alt="Update Salary">
+        Update / Increment Salary
+    </a>
+    <a class="card" href="generate_slip.html">
+        <img src="icons/generate_slip.png" alt="Salary Slip">
+        Generate Salary Slip
+    </a>
+    <a class="card" href="delete_employee.html">
+        <img src="icons/delete.png" alt="Delete Employee">
+        Delete Employee
+    </a>
+    <a class="card" href="ViewAllEmployeesServlet">
+        <img src="icons/viewall.png" alt="View Employees">
+        View All Employees
+    </a>
+    <a class="card" href="LogoutServlet">
+        <img src="icons/logout.png" alt="Logout">
+        Logout
+    </a>
+</div>
+
+</body>
+</html>

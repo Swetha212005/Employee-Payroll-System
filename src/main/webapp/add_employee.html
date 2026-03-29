@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Split background: top off-white, bottom pale green */
+            background: linear-gradient(to bottom, #f8f8f8 50%, #d4edda 50%);
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        form input[type="submit"],
+        form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        form input[type="submit"]:hover,
+        form button:hover {
+            background-color: #ffbf00;
+        }
+
+        .btn-home {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-home:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        function showSuccess() {
+            alert("Employee added successfully!");
+        }
+
+        function goHome() {
+            window.location.href = "home.html"; // redirect to home page
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Employee</h2>
+        <form id="addEmployeeForm" action="AddEmployeeServlet" method="post" onsubmit="showSuccess()">
+            Employee ID: <input type="text" name="empId" required><br>
+            Name: <input type="text" name="name" required><br>
+            DOB: <input type="date" name="dob" required><br>
+            Department: <input type="text" name="department" required><br>
+            Salary: <input type="number" name="salary" required><br>
+            Date Hired: <input type="date" name="dateHired" required><br>
+            
+            <input type="submit" value="Add Employee">
+            <button type="button" class="btn-home" onclick="goHome()">Home</button>
+        </form>
+    </div>
+</body>
+</html>
